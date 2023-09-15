@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/cars-from-usa/static/css/main.386870d4.css",
+    "main.js": "/cars-from-usa/static/js/main.024abe9c.js",
+    "static/js/787.6c5e29fc.chunk.js": "/cars-from-usa/static/js/787.6c5e29fc.chunk.js",
+    "static/media/logo.svg": "/cars-from-usa/static/media/logo.9c55a93a16f32ef753f7d8aeda7ebeb7.svg",
+    "index.html": "/cars-from-usa/index.html",
+    "main.386870d4.css.map": "/cars-from-usa/static/css/main.386870d4.css.map",
+    "main.024abe9c.js.map": "/cars-from-usa/static/js/main.024abe9c.js.map",
+    "787.6c5e29fc.chunk.js.map": "/cars-from-usa/static/js/787.6c5e29fc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.386870d4.css",
+    "static/js/main.024abe9c.js"
+  ]
+}
