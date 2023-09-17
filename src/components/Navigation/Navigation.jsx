@@ -19,7 +19,7 @@ export const Navigation = () => {
         Home
         </StyledLink>
         <StyledLink  to="/catalogue">
-        Book a car
+        Catalogue
         </StyledLink>
 
       </StyledWrap>

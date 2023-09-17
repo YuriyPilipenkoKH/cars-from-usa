@@ -4,29 +4,29 @@ import { NavLink } from "react-router-dom";
 export const MainWrapper= styled.div`
 
 `
-
 export const MainHeader= styled.header`
   top: 0;
   left: 0;
   width: 100%;
-
+  height: 90px;
   display: flex;
   gap: 25px;
   align-items: center;
-
-  padding: 32px 50px 16px;
+  padding: 32px 16px 16px;
   background-color: transparent;
- 
   border-bottom: 1px solid #222;
+
+  @media screen and (min-width: 768px) {
+    padding: 32px 50px 16px;
+    }
+
 
 
 `
 
-
-
 export const StyledLink = styled(NavLink)`
   height: 34px;
-  min-width: 115px;  
+  width: 115px;  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,16 +36,14 @@ export const StyledLink = styled(NavLink)`
   text-decoration: none;
   color: var(--text-color) ;
   transition:  color 1s ease-in-out;
-
   font-weight: 600;
   transition: 0.3s ease;
 
-
-
   &.active {
+    /* color: var(--white); */
     color: #eee;
-    background-color: var(--green);
-    box-shadow: var(--shadow-four);
+    background-color: var(--blue);
+  
   }
 `;
 
@@ -55,7 +53,7 @@ export const MainFooter = styled.footer`
   justify-content: center;
   gap: 40px;
   width: 100%;
-  height: 120px;
+  height: 90px;
   padding: 22px 16px;
 
   text-align: center;

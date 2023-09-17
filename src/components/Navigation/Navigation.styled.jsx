@@ -5,4 +5,8 @@ export const StyledWrap = styled.div`
     align-items: center;
     
     gap: 20px;
+
+    @media screen and (max-width: 767px) {
+    display: none;
+}
 `
