@@ -6,6 +6,7 @@ import Home from '../pages/Home';
 import { useSelector } from 'react-redux';
 import { getLang, getTheme } from '../redux/selectors';
 import Catalogue from '../pages/Catalogue';
+import { NotFound } from '../pages/NotFound';
 
 
 
@@ -31,7 +32,7 @@ const App = () => {
           <Route  index element={< Home />} />
           <Route  path="/catalogue" element={< Catalogue />} />
       
-          {/* <Route path="*" element={<NotFound/>} /> */}
+          <Route path="*" element={<NotFound/>} />
        </Route>
       </Routes>
       </Container>

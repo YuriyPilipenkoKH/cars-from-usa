@@ -1,5 +1,5 @@
 import { HomeTitle, HomeWrapper } from "./Page.styled";
-
+import car from '../images/grand-cherokee-trailhawk.png'
 
 export default function Home() {
 
@@ -7,11 +7,10 @@ export default function Home() {
     return (
       <HomeWrapper  >
         <HomeTitle  >
-         Home Page 
+         BEST CAR FOR RENT TODAY
         </HomeTitle>
-        <span>
-        Span
-          </span>
+        <img src={car} alt="car"/>
+
       </HomeWrapper>
     );
   }

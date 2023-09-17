@@ -2,13 +2,16 @@ import { Suspense } from "react";
 import { Outlet} from 'react-router-dom';
 import { MainFooter, MainHeader} from "./SharedLayout.styled";
 import { AppBar } from "../AppBar/AppBar";
+import { Navigation } from "../Navigation/Navigation";
 
 
 
 export const SharedLayout = () => {
     return (
       <>
-        <MainHeader  className="main-header" >about us
+        <MainHeader  className="main-header" >
+
+        <Navigation/>
         <AppBar/>
         </MainHeader>
 
@@ -20,4 +23,3 @@ export const SharedLayout = () => {
       </>
     )}
 
-    

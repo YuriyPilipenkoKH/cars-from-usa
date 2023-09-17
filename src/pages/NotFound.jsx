@@ -1,5 +1,7 @@
 // import {  coyote404} from "utils/svgIcons";
-import { Page404 } from "./Pages.styled";
+
+import { Page404 } from "./Page.styled";
+
 // import { useEffect, useState } from "react";
 // import { langEN, langUA } from "utils/languages";
 // import { useSelector } from "react-redux";

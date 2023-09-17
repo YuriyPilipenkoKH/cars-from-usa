@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 
+
 export const HomeWrapper= styled.div`
   width: 100%;
   display: flex;
@@ -9,30 +10,17 @@ export const HomeWrapper= styled.div`
   gap: 12px;
 
 
-  &>.football-player{
-    width: 250px;
-    @media screen and (min-width: 768px) {
-    width: 500px;
-}
+
+      @media screen and (min-width: 768px) {
+    min-height: 700px;
+    }
+
     @media screen and (min-width: 1280px) {
-    display: none;
-}
-  }
-`
-export const PhonebookWrapper= styled.div`
-  width: 100%;
+      min-height: 700px;
+    }
 
-  /* background-image: var(--background-image-contacts); */
-  transition: background-image 1s ease-in-out;
-  background-repeat: no-repeat;
-  background-position: center;  
-  background-size: cover;
-
-  &>.new {
-    position: absolute;
-  }
- 
 `
+
 
 
 
