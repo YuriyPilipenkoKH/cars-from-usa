@@ -3,18 +3,21 @@ import { SharedLayout } from '../components/SharedLayout/SharedLayout';
 import Loader from '../components/Loader/Loader';
 import { Container } from '../components/Container/Container';
 import Home from '../pages/Home';
+import { useSelector } from 'react-redux';
+import { getLang, getTheme } from '../redux/selectors';
+import Catalogue from '../pages/Catalogue';
 
 
 
 const App = () => {
     const isLoading = false
 //   const {  isLoading } = useAuth();
-//   const theme = useSelector(getTheme)
-//   const language = useSelector(getLang)
+  const theme = useSelector(getTheme)
+  const language = useSelector(getLang)
 
-   // Set the data-theme attribute on the <html> element
-//    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || theme);
-//    document.documentElement.setAttribute('data-lang',  localStorage.getItem('language')  || language);
+  //  Set the data-theme attribute on the <html> element
+   document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || theme);
+   document.documentElement.setAttribute('data-lang',  localStorage.getItem('language')  || language);
 
 
 
@@ -25,11 +28,11 @@ const App = () => {
       <Container >
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route index element={< Home />} />
+          <Route  index element={< Home />} />
+          <Route  path="/catalogue" element={< Catalogue />} />
       
           {/* <Route path="*" element={<NotFound/>} /> */}
        </Route>
-      
       </Routes>
       </Container>
   

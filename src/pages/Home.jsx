@@ -1,9 +1,7 @@
 import { HomeTitle, HomeWrapper } from "./Page.styled";
 
 
-
 export default function Home() {
-
 
 
     return (
@@ -12,10 +10,8 @@ export default function Home() {
          Home Page 
         </HomeTitle>
         <span>
-        Goo
+        Span
           </span>
-
-
       </HomeWrapper>
     );
   }

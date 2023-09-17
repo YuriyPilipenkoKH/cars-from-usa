@@ -14,7 +14,7 @@ const rotate = keyframes`
 
 export const StyledSpinner = styled(Spinner)`
     
-    animation:${rotate} 2s linear infinite;
+    animation:${rotate} 3s linear infinite;
 `
 
 export const Wrap= styled.div`

@@ -48,7 +48,7 @@ export const HomeTitle = styled.h1`
   &+span {
     max-width: 800px;
     font-weight: 600;
-    color: #757575;
+    color: #eee;
     font-size: 24px;
     text-align: center;
     display: block;
