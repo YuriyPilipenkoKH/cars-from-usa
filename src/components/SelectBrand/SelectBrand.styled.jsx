@@ -18,6 +18,12 @@ export const SelectWrapper = styled.div`
     position: relative;
     display: grid;
     gap: 8px;
+    &>p {
+        color: var(--text-color);
+        transition: all 1s ease;
+
+    }
+
 `
 export const Control = styled.div.attrs(props => ({
     // Add any other props you want to pass here

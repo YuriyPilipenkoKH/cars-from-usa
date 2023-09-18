@@ -8,8 +8,24 @@ import { Button, FlatButton } from "../Button/Button";
 import { RowWrapper } from "../MainCard/MainCard.styled";
 
 const modalRoot = document.querySelector('#modal-root');
-const ModalPopup = ({isOpen, onClose, image,}) => {
+const ModalPopup = ({isOpen, onClose, item}) => {
   const dispatch = useDispatch();
+  const {
+    id,
+    img,
+    make, 
+    year,
+    model,
+    type, 
+    rentalPrice, 
+    address,
+    description,
+    fuelConsumption,
+    engineSize,
+    accessories,
+    functionalities,
+    rentalConditions,
+    mileage} =  item
 
   useEffect(() => {
     if (isOpen) {
@@ -46,7 +62,7 @@ useEffect(() => {
       window.removeEventListener('click', handleBackdropClick);
       window.removeEventListener('keydown', handleKeyDown);
   };
-}, [onClose]);
+}, [onClose,dispatch]);
 
 const shut = () => {
   dispatch(setModalClose());
@@ -65,55 +81,56 @@ const shut = () => {
 
 
     <ModalContainer>
-    {image && (
-    <ModalImage src={null} alt="Modal Image" />
+    {img && (
+    <ModalImage img={img}  />
     )}
 
     <CarDescription>
       <div className="car-model">
-        <p>Buick</p>
-        <span>Enclave</span>
-        <p>2008</p>
+        <p> {make} </p>
+        <span> {model} </span>
+        <p> {year} </p>
       </div>
-      <RowWrapper>
-               <p>Kyiv</p>
-               <p>Ukraine</p>
-               <p>Id: <span>9582</span></p>
-               <p>Year: <span>2008</span></p>
-               <p>Year: <span>2008</span></p>
-               <p>Type: <span>Suv</span></p>
+
+          <RowWrapper className="tech-params">
+               <p>{address.split(' ')[3].replace(/,/g, '')}</p>
+               <p>{address.split(' ')[4].replace(/,/g, '')}</p>
+               <p>Id: <span>{id}</span></p>
+               <p>Year: <span>{year}</span></p>
+               <p>Year: <span>{year}</span></p>
+               <p>Type: <span>{type}</span></p>
            </RowWrapper>
 
-           <RowWrapper>
-               <p>Fuel Consumption: <span>10.5</span></p>
-               <p>Engine Size: 3.6L <span>V6</span></p>
+           <RowWrapper className="tech-params">
+              <p>Fuel Consumption: <span>{fuelConsumption}</span></p>
+              <p>Engine Size: <span>{engineSize}</span></p>
 
            </RowWrapper>  
-        <p className="details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia beatae ut nostrum, repudiandae similique officia incidunt odit magnam veniam maxime a? Nihil similique, quod corporis tempora repellat nostrum voluptatum expedita natus veniam officia dolore blanditiis hic omnis consectetur consequatur laborum nobis porro temporibus error. Consequatur iure dolorem, libero perspiciatis quam alias vel maxime error dolorum sapiente eius, cum harum culpa sunt minima nulla, eaque dolor. Quisquam quis totam expedita quas maxime eius doloremque sequi, dolorem, itaque reiciendis quod temporibus magnam illum, ad aut ipsum perferendis neque ea tempore distinctio quam nihil? Temporibus dolores incidunt molestiae exercitationem distinctio voluptas debitis fugit.</p>
+           <p className="details">{description}</p>
     </CarDescription>
     <CarAccessories>
       <h3>Accessories and functionalities:</h3>
-      <RowWrapper>
-               <p>Leather seats</p>
-               <p>Panoramic sunroof</p>
-               <p>Power liftgate</p>
+      <RowWrapper className="accessories">
+               <p>{accessories[0]}</p>
+               <p>{accessories[1]}</p>
+               <p>{accessories[2]}</p>
 
            </RowWrapper>
-      <RowWrapper>
-               <p>Premium audio system</p>
-               <p>Remote start</p>
-               <p>Blind-spot monitoring</p>
+      <RowWrapper className="accessories">
+               <p>{functionalities[0]}</p>
+               <p>{functionalities[1]}</p>
+               <p>{functionalities[2]}</p>
 
            </RowWrapper>
     </CarAccessories>
     <RentalConditions>
       <h3>Rental Conditions: </h3>
       <div className="tabs">
-        <div>Minimum age : <span> 25</span></div>
-        <div>Valid driver’s license</div>
-        <div>Security deposite required </div>
-        <div>Mileage: <span>5,858</span></div>
-        <div>Price: <span>40$</span></div>
+      <div>Minimum age:<span>{rentalConditions.split("\\n")[0].match(/\d+/)}</span></div>
+        <div>{rentalConditions.split("\n")[0]}</div>
+        <div>{rentalConditions.split("\n")[1]}</div>
+        <div>Mileage: <span>{mileage/1000}</span></div>
+        <div>Price: <span>{rentalPrice}</span></div>
       </div>
     </RentalConditions>
 

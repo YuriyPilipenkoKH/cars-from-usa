@@ -19,6 +19,10 @@ export const MainHeader= styled.header.attrs(props => ({
   @media screen and (min-width: 768px) {
     padding: 32px 50px 16px;
     }
+  @media screen and (min-width: 1280px) {
+    padding: 32px 0 16px;
+    width: 1186px;
+    }
 
 &>button.mobile-menu{
 
@@ -57,13 +61,12 @@ export const StyledLink = styled(NavLink)`
   border-radius: 4px;
   text-decoration: none;
   color: var(--text-color) ;
-  transition:  color 1s ease-in-out;
+  transition: all 1s ease-in-out;
   font-weight: 600;
   transition: 0.3s ease;
 
   &.active {
-    /* color: var(--white); */
-    color: #eee;
+    color: var(--white);
     background-color: var(--blue);
   
   }

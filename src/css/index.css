@@ -37,10 +37,10 @@
 }
 
 :root[data-theme="light"] {
-  --background-color: #fef9f9;
+  --background-color: #fff;
   --background-link: transparent;
   --text-color: #1C1E21;
-  --card-color: #fff;
+  --card-color: #12141780;
   
   --field-color: #eeeeee;
   --border: 3px solid transparent;
@@ -59,7 +59,7 @@
   --background-color: #001129;
   --background-link: #ff75;
   --text-color: #f5f6f7cc;
-  --card-color: #9994;
+  --card-color: #f5f6f7cc;
 
   --field-color: #eee5;
   --border: 3px solid var(--blue);
@@ -80,7 +80,7 @@ body {
   background-color: var(--background-color);
   margin: 0;
   padding: 0;
-  font-family: -apple-system, Manrope,  sans-serif;
+  font-family: -apple-system, Manrope, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: all 1s ease-in-out;

@@ -25,9 +25,9 @@ export const MenuWrapp = styled.div`
   }
 
 `
-export const MenuHeader = styled.div.attrs(props => ({
-  theme: props.theme,
-}))`
+  export const MenuHeader = styled.div.attrs(props => ({
+    theme: props.theme,
+  }))`
     position: relative;
     
     width: 100%;

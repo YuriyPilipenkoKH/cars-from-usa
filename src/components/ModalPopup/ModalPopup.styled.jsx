@@ -41,26 +41,36 @@ export const ModalContainer = styled.div`
     'c5';
     gap: 12px;  
     background-color: var(--white);
-    padding: 40px;
-    border-radius: 24px;
+    padding: 20px;
+    border-radius: 14px;
     z-index: 50;
-    background-color: var(--background-color-form);
-    color: var(--text-color);
+    background-color: #fff;
+    color: var(--black);
 
     @media screen and (min-width: 768px) {
     width: 541px;
     height: 752px;
+    padding: 40px;
+    border-radius: 24px;
     }
 
     &>button.modal-close{
         position: absolute;
-        top: 16px;
-        right: 16px;
+        top: 8px;
+        right: 8px;
 
         &>svg {
-            scale: 1.5;
-            color: var(--text-color);
+        color: var(--main-text);
         }
+    @media screen and (min-width: 768px) {
+            top: 16px;
+            right: 16px;
+            &>svg {
+            scale: 1.5;
+         
+        }
+    }
+
     }
     &>button.rental-car{
         grid-area: c5;
@@ -69,13 +79,19 @@ export const ModalContainer = styled.div`
     }
   `;
 
-export const ModalImage = styled.img`
+export const ModalImage = styled.div.attrs(props => ({
+    img: props.img,
+    like: props.like,
+  }))`
 grid-area: c1;
 /* max-width: 100%;
 height: auto; */
 width:240px;
 height: 240px;
 border-radius: 14px;
+    background-image: url(${props => props.img &&  props.img});
+    background-size: cover;
+    background-position: center;  
 
 @media screen and (min-width: 768px) {
   width: 461px;
@@ -104,9 +120,14 @@ export const CarDescription = styled.div`
         font-size: 14px;
         overflow: hidden;
         text-overflow: ellipsis; 
-        white-space: nowrap;
-        /* -webkit-box-orient: vertical ; */
-        /* -webkit-line-clamp: 2 ;  */
+        -webkit-box-orient: vertical ; 
+        -webkit-line-clamp: 2 ; 
+    }
+
+    &>.tech-params {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; 
     }
 `
 export const CarAccessories = styled.div`
@@ -115,6 +136,15 @@ export const CarAccessories = styled.div`
     gap: 8px;
     &>h3{
         font-size: 14px;
+    }
+    &> .accessories{
+        width: 240px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        @media screen and (min-width: 768px) {
+        width: 461px;
+       }   
     }
 `
 export const RentalConditions  = styled.div`
@@ -130,11 +160,12 @@ export const RentalConditions  = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    font-family: Montserrat,  sans-serif ;
         &>div{
             display: inline-flex;
             gap: 4px;
             padding:6px 8px;
-            background-color: #7775;
+            background-color: #f9f9f9;
             border-radius: 16px;
         }
     &>div>span {
