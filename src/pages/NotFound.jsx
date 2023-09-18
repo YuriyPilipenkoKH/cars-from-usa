@@ -1,27 +1,13 @@
-// import {  coyote404} from "utils/svgIcons";
-
 import { Page404 } from "./Page.styled";
 
-// import { useEffect, useState } from "react";
-// import { langEN, langUA } from "utils/languages";
-// import { useSelector } from "react-redux";
-// import { getLang } from "redux/selectors";
 
 export const NotFound = () => {
 
-  // const [lang, setLang] = useState(langUA)
-  // const language = useSelector(getLang)
- 
-  // Language
-  // useEffect(() => {
-  //   setLang(language === 'english' ?  langEN :  langUA);
-  // }, [language])
-
-
     return (
       <Page404 >
-        <b > sorry </b>
-        {/* {coyote404} */}
+        <h1>404</h1>
+        <b > Sorry we couldn’t find that page</b>
+
       </Page404>
     );
   };

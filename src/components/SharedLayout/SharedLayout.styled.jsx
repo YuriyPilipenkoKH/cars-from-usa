@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { NavLink } from "react-router-dom";
 
-export const MainWrapper= styled.div`
 
-`
-export const MainHeader= styled.header`
+export const MainHeader= styled.header.attrs(props => ({
+  theme: props.theme,
+}))`
   top: 0;
   left: 0;
   width: 100%;
@@ -20,6 +20,28 @@ export const MainHeader= styled.header`
     padding: 32px 50px 16px;
     }
 
+&>button.mobile-menu{
+
+  @media screen and (min-width: 768px) {
+    display: none;
+    }
+
+     &> svg {
+        transition:  all 1s ease-in-out;
+        color: var(--text-color);
+        scale: 2;
+        }
+
+    &:hover{
+        background-color: #eee5;
+
+
+        &> svg {
+            transition:  all 1s ease-in-out;
+            fill:  ${props => props.theme === 'light' ? '#eee' : '#222'};
+        }
+    }
+    }
 
 
 `

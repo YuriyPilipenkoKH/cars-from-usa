@@ -48,10 +48,11 @@ export const Page404 = styled.div`
  display: grid;
  place-items: center;
  text-align: center;
-
+ color: var(--text-color);
+ transition: all 1s ease-in-out;
   & > svg {
        fill: var(--text-color);
-        transition: fill 1s ease-in-out;
+        transition: all 1s ease-in-out;
 
   }
   & > b {

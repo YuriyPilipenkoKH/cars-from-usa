@@ -1,9 +1,20 @@
+import { useState } from "react";
 import { iconHeart } from "../../images/icons"
 import { Button, FlatButton } from "../Button/Button"
 import { CardTitle, CardWrapper, ImgWrapper, RowWrapper } from "./MainCard.styled"
+import ModalPopup from "../ModalPopup/ModalPopup";
 
 
 export const MainCard = () => {
+    const [showModal, setShowModal] = useState(false);
+
+    const onModalClose = () => {
+        setShowModal(false);
+    };
+
+    const onModalOpen = () => {
+        setShowModal(true);
+    };
 
     return (
         <CardWrapper>
@@ -31,7 +42,18 @@ export const MainCard = () => {
                <p>Power moonroof</p>
            </RowWrapper>
 
-           <Button className="learnBtn">Learn more</Button>
+           <Button 
+            onClick={onModalOpen }
+            className="learnBtn">
+            Learn more</Button>
+
+            {showModal && (
+                <ModalPopup
+                    onClose={onModalClose}
+                    isOpen={showModal}
+                />
+            )}
+
         </CardWrapper>
     )
 }

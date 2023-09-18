@@ -21,6 +21,9 @@ export const Navigation = () => {
         <StyledLink  to="/catalogue">
         Catalogue
         </StyledLink>
+        <StyledLink  to="/favorites">
+        Favorites
+        </StyledLink>
 
       </StyledWrap>
     );

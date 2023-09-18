@@ -6,6 +6,15 @@ export const StyledHeader = styled.div`
     align-items: center;
    /* justify-content: space-between; */
    gap: 20px;
+
+   &>button.ThemeBtn{
+       display: none;
+       
+       @media screen and (min-width: 768px) {
+           display: flex;
+           margin-left: auto;
+    }
+   }
 `
 
 export const ThemeBtn = styled.button`
@@ -23,8 +32,6 @@ export const ThemeBtn = styled.button`
     transition: all 0.4ms ease-in-out;
     cursor: pointer;
  
-    
-
     &> svg {
         transition:  fill 1s ease-in-out;
         fill: var(--text-color);

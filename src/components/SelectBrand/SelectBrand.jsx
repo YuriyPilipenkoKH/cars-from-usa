@@ -7,7 +7,7 @@ import { showFilterBrand } from '../../redux/filterSlice'
 
 
 const SelectBrand = () => {
-    const [selectedBrand, setSelectedBrand] = useState("Enter the text")
+    const [selectedBrand, setSelectedBrand] = useState("")
     const [isSelected, setIsSelected] = useState(false)
     const dispatch = useDispatch()
     const carBrands = [
@@ -31,7 +31,7 @@ const SelectBrand = () => {
     <SelectWrapper>
         <p>Car brand</p>
         <Control> 
-            {selectedBrand }
+            {selectedBrand || 'Enter the text' }
             <FlatButton  onClick ={()=>  setIsSelected(!isSelected)}> 
             {isSelected ? <BiChevronUp size ={20}/> : <BiChevronDown size ={20}/>}
             </FlatButton>
