@@ -1,5 +1,5 @@
 import { iconHeart } from "../../images/icons"
-import { Button } from "../Button/Button"
+import { Button, FlatButton } from "../Button/Button"
 import { CardTitle, CardWrapper, ImgWrapper, RowWrapper } from "./MainCard.styled"
 
 
@@ -8,9 +8,9 @@ export const MainCard = () => {
     return (
         <CardWrapper>
             <ImgWrapper>
-            <button className="likeBtn">
+            <FlatButton className="likeBtn">
                 {iconHeart}
-            </button>
+            </FlatButton>
             </ImgWrapper>
             <CardTitle>
                 <p>Subaru, 2016</p>

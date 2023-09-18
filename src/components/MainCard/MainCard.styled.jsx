@@ -8,7 +8,8 @@ export const CardWrapper = styled.div`
     transition: all 1s ease-in-out;
     width: 274px;
     height: 426px;
-
+    background-color: var(--white);
+    border-radius: 14px;
 
     @media screen and (min-width: 768px) {
     
@@ -33,11 +34,7 @@ export const ImgWrapper = styled.div`
     justify-content: flex-end;
 
     &>button.likeBtn {
-       padding: 0;
-       outline: none;
-       border:none;
-       background-color: transparent;
-       cursor: pointer; 
+
        &>svg {
            fill: var(--white);
        }
@@ -67,7 +64,7 @@ export const RowWrapper = styled.div`
     font-size: 12px;
 
     &>p{
-        padding: 2px 4px 0;
+        padding: 2px 3px 0;
     }
 
     &>p:not(:last-child){

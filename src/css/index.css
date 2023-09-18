@@ -13,6 +13,8 @@
   
   --black: #121417;
   --semi-black: #12141780;
+  --black-20: #12141733;
+
   --medium-blue: #76bcf9;
   --blue: #3470FF;
   --hover-blue: #0B44CD;
@@ -20,7 +22,7 @@
   --light-blue: #cce4fb;
   --green: #00c3ad;
   --red: #f43f5e;
-  --grey: #888888;
+  --grey: #8A8A89;
   
   --gradient-yr: #ff5f40;
   --gradient-yl: #ffcf45;
@@ -34,10 +36,48 @@
 
 }
 
+:root[data-theme="light"] {
+  --background-color: #fef9f9;
+  --background-link: transparent;
+  --text-color: #1C1E21;
+  --card-color: #fff;
+  
+  --field-color: #eeeeee;
+  --border: 3px solid transparent;
+  --button-color-loguut: #333;
+  --background-color-form: #fff;
+  --background-color-input: #fff;
+  --input-text-color: #888888;
+  --placeholder-input-color: #888; 
+  --button-color-option: #54adff;
+
+  --main-text:  #001129;
+  --link-span:  #ffc107;
+}
+
+:root[data-theme="dark"] {
+  --background-color: #001129;
+  --background-link: #ff75;
+  --text-color: #f5f6f7cc;
+  --card-color: #9994;
+
+  --field-color: #eee5;
+  --border: 3px solid var(--blue);
+  --button-color-loguut: #54adff;
+  --background-color-form: #1E325C;
+  --background-color-input: #1E325C;
+  --input-text-color: white;
+  --placeholder-input-color: #E0FFFF; 
+  --button-color-option: #003366;
+  
+  --main-text:  #001129;
+  --link-span:  #54adff;
+
+}
+
 body {
   overflow-x: hidden;
   background-color: var(--background-color);
-  background-color: var(--fone-color);
   margin: 0;
   padding: 0;
   font-family: -apple-system, Manrope,  sans-serif;
@@ -59,6 +99,7 @@ ul, li {
   list-style: none;
   padding: 0;
   margin: 0;
+
 }
 
 

@@ -5,7 +5,7 @@ import FiltersBar from '../components/FiltersBar/FiltersBar'
 
 const Catalogue = () => {
   return (
-    <div>
+    <div className='wrapper'>
 
     <FiltersBar/>
     <MainCard/>

@@ -3,9 +3,10 @@ import styled from 'styled-components';
 export const MainContainer = styled.div`
     display: grid;
     place-items: center;
+    gap: 2em;
     grid-template-rows: 90px auto 90px;
   
-    background-color: var(--fone-color);
+    background-color: var(--background-color);
     margin: 0 auto;
     width: 100%;
     min-height: 100vh;
@@ -22,5 +23,11 @@ export const MainContainer = styled.div`
     @media screen and (min-width: 1280px) {
         min-width: 100%;
         padding: 0 1em;
+    }
+
+    &>.wrapper {
+        align-self: start;
+        display: grid;
+        gap: 1em;
     }
 `;
