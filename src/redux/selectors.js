@@ -6,7 +6,7 @@ export const getCars = state => state.cars;
 
 export const getCarList = state => state.cars.carsList;
 
-export const getCurrentCar = state => state.cars.currentCar; 
+export const getFavorites = state => state.cars.favorites; 
 
 export const getReRender = state => state.cars.reRender; 
 

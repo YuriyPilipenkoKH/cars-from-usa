@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { getCarList, getReRender } from "../redux/selectors";
+import { getCarList, getFavorites, getReRender } from "../redux/selectors";
 import { useEffect, useState } from "react";
-import { Gallery } from "./Page.styled";
+import { CatalogueWrapper, Gallery } from "./Page.styled";
 import { MainCard } from "../components/MainCard/MainCard";
 import { Button } from "../components/Button/Button";
 import { getAllCars } from "../redux/carsOperations";
@@ -13,7 +13,8 @@ const Favorites = () => {
   const dispatch = useDispatch();
   const carsList = useSelector(getCarList);
   const reRender= useSelector(getReRender)
-  const [visibleCars, setVisibleCars] = useState(12); // Number of cards to initially display
+  const favorites = useSelector(getFavorites)
+  const [visibleCars, setVisibleCars] = useState(12); 
   const loadMoreStep = 12; 
 
   
@@ -24,21 +25,27 @@ const Favorites = () => {
   useEffect(() => {
     dispatch(getAllCars());
   }, [dispatch, reRender]);
+
   return (
-    <div>
+    <CatalogueWrapper>
        <Gallery className='gallery'>
-        {carsList.slice(0, visibleCars).map((item, index) =>
-        
-         <MainCard key={index} item={item} />
+        {carsList
+        .filter((item) => item.favorite === true)
+        .slice(0, visibleCars)
+        .map((item, index) =>
+
+         <MainCard key={index} item={item} /> 
         )}
       </Gallery>
-      {visibleCars < carsList.length && (
+
+
+   { (favorites > visibleCars) && (
         <Button 
         className='LoadMore'
         onClick={handleLoadMore}>Load More</Button>
-      )}
+      )} 
 
-    </div>
+    </CatalogueWrapper>
   )
 }
 

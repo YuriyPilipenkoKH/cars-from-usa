@@ -9,9 +9,7 @@ export const HomeWrapper= styled.div`
   align-items: center;
   gap: 12px;
 
-
-
-      @media screen and (min-width: 768px) {
+    @media screen and (min-width: 768px) {
     min-height: 700px;
     }
 
@@ -21,6 +19,7 @@ export const HomeWrapper= styled.div`
 
 `
 export const CatalogueWrapper= styled.div`
+display: grid;
   &>button.LoadMore{
     width: 160px;
     justify-self: center;

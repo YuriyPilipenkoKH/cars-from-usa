@@ -5,7 +5,7 @@ import { addToFavorites, getAllCars, getCarById } from './carsOperations';
 const initialState = {
   carsList: [],
   currentCar: {},
-  favorites: [],
+  favorites: 0,
   loading: false,
   error: null,
   reRender: false,
@@ -23,8 +23,9 @@ export const carsSlice = createSlice({
         .addCase(
             getAllCars.fulfilled,
               (state, { payload }) => {
-                // console.log(payload);
+                console.log(payload);
                   state.carsList = payload
+                  state.favorites = payload.filter((item) => item.favorite === true).length
               }
           )
         .addCase(
@@ -63,7 +64,7 @@ export const carsSlice = createSlice({
             (state, { payload }) => {
                 console.log('payload', payload)
                 state.reRender = false;
-                // state.favorites = [...state.favorites, payload]
+               
             }
         )
         .addCase(
