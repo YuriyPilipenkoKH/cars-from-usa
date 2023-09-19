@@ -13,13 +13,13 @@ import { resetFilters } from '../redux/filterSlice';
 
 const Catalogue = () => {
   const carsList = useSelector(getCarList);
-  const [visibleCars, setVisibleCars] = useState(12);
+  const [visibleCars, setVisibleCars] = useState(8);
   const [searchedCars, setSearchedCars] = useState(carsList)
   const [isSeaching, setIsSeaching] = useState(false)
  
   const dispatch = useDispatch();
     const reRender= useSelector(getReRender)
-    const loadMoreStep = 12; 
+    const loadMoreStep = 8; 
     const {
       filterBrand, 
       filterPrice,

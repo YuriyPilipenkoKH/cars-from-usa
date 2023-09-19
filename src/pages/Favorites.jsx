@@ -14,8 +14,8 @@ const Favorites = () => {
   const carsList = useSelector(getCarList);
   const reRender= useSelector(getReRender)
   const favorites = useSelector(getFavorites)
-  const [visibleCars, setVisibleCars] = useState(12); 
-  const loadMoreStep = 12; 
+  const [visibleCars, setVisibleCars] = useState(8); 
+  const loadMoreStep = 8; 
 
   
   const handleLoadMore = () => {
