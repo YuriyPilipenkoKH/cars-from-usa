@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getAllCars, getCarById } from './carsOperations';
+import { addToFavorites, getAllCars, getCarById } from './carsOperations';
 
 
 const initialState = {
-  listCars: [],
-  item: {},
+  carsList: [],
+  currentCar: {},
+  favorites: [],
   loading: false,
   error: null,
   reRender: false,
@@ -23,7 +24,7 @@ export const carsSlice = createSlice({
             getAllCars.fulfilled,
               (state, { payload }) => {
                 // console.log(payload);
-                  state.listCars = payload
+                  state.carsList = payload
               }
           )
         .addCase(
@@ -36,17 +37,40 @@ export const carsSlice = createSlice({
         .addCase(
             getCarById.pending, (state) => {
             state.error = null;
+            
         })
         .addCase(
           getCarById.fulfilled,
             (state, { payload }) => {
-                state.listCars = payload
+                console.log('payload',payload)
+                state.currentCar = payload
             }
         )
         .addCase(
           getCarById.rejected,
             (state, { payload }) => {
                 state.error = payload;
+            }
+        )
+
+        .addCase(
+            addToFavorites.pending, (state) => {
+            state.error = null;
+            state.reRender = true;
+        })
+        .addCase(
+          addToFavorites.fulfilled,
+            (state, { payload }) => {
+                console.log('payload', payload)
+                state.reRender = false;
+                // state.favorites = [...state.favorites, payload]
+            }
+        )
+        .addCase(
+          addToFavorites.rejected,
+            (state, { payload }) => {
+                state.error = payload;
+                state.reRender = false;
             }
         )
           

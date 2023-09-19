@@ -7,7 +7,7 @@ export const MainHeader= styled.header.attrs(props => ({
 }))`
   top: 0;
   left: 0;
-  width: 100%;
+  width: 320px;
   height: 90px;
   display: flex;
   gap: 25px;
@@ -17,7 +17,8 @@ export const MainHeader= styled.header.attrs(props => ({
   border-bottom: 1px solid #222;
 
   @media screen and (min-width: 768px) {
-    padding: 32px 50px 16px;
+    width: 768px;
+    padding: 32px 16px 16px;
     }
   @media screen and (min-width: 1280px) {
     padding: 32px 0 16px;
@@ -74,10 +75,10 @@ export const StyledLink = styled(NavLink)`
 
 export const MainFooter = styled.footer`
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
   gap: 40px;
-  width: 100%;
+  width: 320px;
   height: 90px;
   padding: 22px 16px;
 
@@ -94,4 +95,15 @@ export const MainFooter = styled.footer`
     transition: color 1s ease-in-out, fill 1s ease-in-out;
     fill: var(--text-color);
   }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    }
+  @media screen and (min-width: 1280px) {
+   
+    width: 1186px;
+    }
+
+    &>img{
+      width: 40px;
+    }
 `

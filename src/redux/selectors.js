@@ -4,6 +4,10 @@ export const getFilter = state => state.filter
 
 export const getCars = state => state.cars;
 
-export const getCarList = state => state.cars.listCars;
+export const getCarList = state => state.cars.carsList;
+
+export const getCurrentCar = state => state.cars.currentCar; 
+
+export const getReRender = state => state.cars.reRender; 
 
 

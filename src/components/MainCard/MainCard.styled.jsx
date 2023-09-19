@@ -26,6 +26,8 @@ export const CardWrapper = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    color: var(--text2);
+    transition: all 1s ease-in-out;
     }
 
 `
@@ -73,7 +75,7 @@ export const RowWrapper = styled.div`
     display: flex;
     color: var(--semi-black);
     font-size: 12px;
-    color: var(--card-color);
+   
     transition: all 1s ease-in-out;
 
     &>p{

@@ -8,6 +8,7 @@ import { FlatButton } from "../Button/Button";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
 
+
 export const SharedLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
@@ -30,7 +31,10 @@ export const SharedLayout = () => {
             <Outlet />
           </Suspense>
         
-        <MainFooter className="main-footer"> 2023  </MainFooter>
+        <MainFooter className="main-footer">
+        2023
+ 
+          </MainFooter>
         <MobileMenu isOpen={isOpen} onClose={toggleMenu} />
       </>
     )}

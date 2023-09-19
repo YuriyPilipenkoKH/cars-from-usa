@@ -20,9 +20,17 @@ export const HomeWrapper= styled.div`
     }
 
 `
+export const CatalogueWrapper= styled.div`
+  &>button.LoadMore{
+    width: 160px;
+    justify-self: center;
+    color: var(--blue);
+    background-color: transparent;
+    font-weight: 600;
+    margin-top: 50px;
+  }
 
-
-
+`
 
 export const HomeTitle = styled.h1`
 
@@ -30,8 +38,9 @@ export const HomeTitle = styled.h1`
 
   font-size: 40px;
   font-weight: 700;
-  color: var(--app-title);
+  color: var(--text-color);
   padding: 12px;
+  transition: all 1s ease-in-out;
 
   &+span {
     max-width: 800px;

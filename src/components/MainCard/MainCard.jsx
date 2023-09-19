@@ -3,12 +3,17 @@ import { Button, FlatButton } from "../Button/Button"
 import { CardTitle, CardWrapper, ImgWrapper, RowWrapper } from "./MainCard.styled"
 import ModalPopup from "../ModalPopup/ModalPopup";
 import { iconHeart } from "../../images/icons";
+import { useDispatch} from "react-redux";
+import { addToFavorites} from "../../redux/carsOperations";
+
 
 
 export const MainCard = ({ item }) => {
 
     const [showModal, setShowModal] = useState(false);
+    
     const {
+        id,
         img,
         make, 
         year,
@@ -18,6 +23,7 @@ export const MainCard = ({ item }) => {
         accessories,
         rentalCompany,
         mileage} =  item
+    const dispatch = useDispatch()    
     const onModalClose = () => {
         setShowModal(false);
     };
@@ -25,14 +31,19 @@ export const MainCard = ({ item }) => {
     const onModalOpen = () => {
         setShowModal(true);
     };
-    let like  = ''
+    // let like  = ''
+    const updatedCar = { ...item, favorite: !item.favorite }
 
+    console.log('item.favorite',item.favorite)
     return (
         <CardWrapper>
             <ImgWrapper 
             img={img}
-            like={like}>
-            <FlatButton className="likeBtn">
+            like={item.favorite}>
+            <FlatButton 
+            onClick={()=> dispatch(addToFavorites({id, updatedCar}))}
+
+            className="likeBtn">
                 {iconHeart}
             </FlatButton>
             </ImgWrapper>

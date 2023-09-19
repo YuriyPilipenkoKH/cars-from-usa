@@ -40,6 +40,7 @@
   --background-color: #fff;
   --background-link: transparent;
   --text-color: #1C1E21;
+  --text2: #12141780;
   --card-color: #12141780;
   
   --field-color: #eeeeee;
@@ -59,7 +60,8 @@
   --background-color: #001129;
   --background-link: #ff75;
   --text-color: #f5f6f7cc;
-  --card-color: #f5f6f7cc;
+  --text2: #f5f6f7cc;
+  --card-color: #12141780;
 
   --field-color: #eee5;
   --border: 3px solid var(--blue);
