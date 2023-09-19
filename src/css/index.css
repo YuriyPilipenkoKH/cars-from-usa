@@ -3,7 +3,7 @@
 @import '../../node_modules/modern-normalize/modern-normalize.css';
 
 :root {
-  --accent-color: #ff8356;
+
   --fone-color: #fef9f9;
   --sel-color: #F7F7FB;
   
@@ -24,14 +24,6 @@
   --red: #f43f5e;
   --grey: #8A8A89;
   
-  --gradient-yr: #ff5f40;
-  --gradient-yl: #ffcf45;
-  
-  --gradient-bl: #88c7fc;
-  --gradient-br: #4da5f3;
-  
-  
-  --time: 250ms;
   
 
 }
@@ -53,7 +45,7 @@
   --button-color-option: #54adff;
 
   --main-text:  #001129;
-  --link-span:  #ffc107;
+
 }
 
 :root[data-theme="dark"] {
@@ -73,7 +65,7 @@
   --button-color-option: #003366;
   
   --main-text:  #001129;
-  --link-span:  #54adff;
+
 
 }
 

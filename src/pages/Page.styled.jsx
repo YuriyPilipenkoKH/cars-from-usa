@@ -9,6 +9,13 @@ export const HomeWrapper= styled.div`
   align-items: center;
   gap: 12px;
 
+  &>p{
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-color);
+    transition: all 1s ease-in-out;
+  }
+
     @media screen and (min-width: 768px) {
     min-height: 700px;
     }
@@ -19,6 +26,7 @@ export const HomeWrapper= styled.div`
 
 `
 export const CatalogueWrapper= styled.div`
+position: relative;
 display: grid;
   &>button.LoadMore{
     width: 160px;

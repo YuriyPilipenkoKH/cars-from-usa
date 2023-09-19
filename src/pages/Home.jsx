@@ -7,9 +7,11 @@ export default function Home() {
     return (
       <HomeWrapper  >
         <HomeTitle  >
-         BEST CAR FOR RENT TODAY
+         Car Rentals
         </HomeTitle>
+        <p>Best Choice</p>
         <img src={car} alt="car"/>
+        <p>Book your trip with us</p>
 
       </HomeWrapper>
     );

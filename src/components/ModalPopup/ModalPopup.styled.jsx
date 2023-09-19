@@ -72,12 +72,15 @@ export const ModalContainer = styled.div`
     }
 
     }
-    &>button.rental-car{
-        grid-area: c5;
-        align-self: flex-end;
+    `;
+
+export const RentalCarWrapp = styled.div`
+    grid-area: c5;
+    align-self: flex-end;
+    &>a>.rental-car{
         width: 168px;
     }
-  `;
+  `
 
 export const ModalImage = styled.div.attrs(props => ({
     img: props.img,

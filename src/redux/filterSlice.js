@@ -25,9 +25,15 @@ export  const filterSlice = createSlice({
         showFilterTo(state, action) {
         state.filterTo = action.payload
       },
+        resetFilters(state, action) {
+        state.filterBrand = ""
+        state.filterPrice = 0
+        state.filterFrom = ""
+        state.filterTo = ""
+      },
 }
 
 })
 
-export const {showFilterFrom, showFilterTo, showFilterBrand, showFilterPrice}  = filterSlice.actions
+export const {showFilterFrom, showFilterTo, showFilterBrand, showFilterPrice, resetFilters}  = filterSlice.actions
 export const filterReducer = filterSlice.reducer

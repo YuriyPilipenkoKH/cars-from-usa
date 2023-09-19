@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setModalClose, setModalOpen } from "../../redux/modalSlice";
-import { CarAccessories, CarDescription, ModalContainer, ModalImage, ModalOverlay, RentalConditions } from "./ModalPopup.styled";
+import { CarAccessories, CarDescription, ModalContainer, ModalImage, ModalOverlay, RentalCarWrapp, RentalConditions } from "./ModalPopup.styled";
 import { createPortal } from "react-dom";
 import { RxCross2 } from 'react-icons/rx';
 import { Button, FlatButton } from "../Button/Button";
@@ -134,8 +134,11 @@ const shut = () => {
       </div>
     </RentalConditions>
 
-    <Button className='rental-car'>Rental car</Button>
-
+    <RentalCarWrapp>
+      <a href="tel:+380730000000" className="rental-car-link">
+        <Button className="rental-car">Rental car</Button>
+         </a>
+    </RentalCarWrapp>
 
       <FlatButton
       className ='modal-close'

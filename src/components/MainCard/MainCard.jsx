@@ -31,15 +31,14 @@ export const MainCard = ({ item }) => {
     const onModalOpen = () => {
         setShowModal(true);
     };
-    // let like  = ''
+
     const updatedCar = { ...item, favorite: !item.favorite }
 
-    console.log('item.favorite',item.favorite)
     return (
         <CardWrapper>
             <ImgWrapper 
             img={img}
-            like={item.favorite}>
+            like={!!item.favorite}>
             <FlatButton 
             onClick={()=> dispatch(addToFavorites({id, updatedCar}))}
 

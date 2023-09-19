@@ -2,13 +2,15 @@ import { useEffect, useState } from 'react'
 import {BiChevronDown, BiChevronUp} from 'react-icons/bi'
 import { Control, OptionsList, SelectWrapper } from './SelectBrand.styled'
 import { FlatButton } from '../Button/Button'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { showFilterBrand } from '../../redux/filterSlice'
+import { getFilter } from '../../redux/selectors'
 
 
 const SelectBrand = () => {
     const [selectedBrand, setSelectedBrand] = useState("")
     const [isSelected, setIsSelected] = useState(false)
+    const {filterBrand} = useSelector(getFilter)
     const dispatch = useDispatch()
     const carBrands = [
         'buick',
@@ -19,19 +21,31 @@ const SelectBrand = () => {
         'lincoln',
         'gmc',
         'hyundai',
-        'jeep',
-        ]
+        'mini',
+        'bentley',
+        'Mercedes-Benz',
+        'Aston Martin',
+        'pontiac',
+        'lamborghini',
+        'audi',
+        'BMW',
+        'chevrolet',
+        'chrysler',
+        'kia',
+        'Land Rover',
+         ]
 
     useEffect(() => {
         dispatch(showFilterBrand(selectedBrand))
     }, [dispatch, selectedBrand])
-        
+
 
   return (
     <SelectWrapper>
         <p>Car brand</p>
         <Control> 
-            {selectedBrand || 'Enter the text' }
+       
+            { filterBrand || 'Enter the text' } 
             <FlatButton  onClick ={()=>  setIsSelected(!isSelected)}> 
             {isSelected ? <BiChevronUp size ={20}/> : <BiChevronDown size ={20}/>}
             </FlatButton>
@@ -40,7 +54,10 @@ const SelectBrand = () => {
          {carBrands.map((brand, idx) => {
          return <li 
          key = {idx}
-         onClick ={() => setSelectedBrand(brand)}
+         onClick ={() => {
+           setSelectedBrand(brand)
+           setIsSelected(false)
+        }}
          >{brand}</li>
        }) }
         </OptionsList>}
