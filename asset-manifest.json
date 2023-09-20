@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/cars-from-usa/static/css/main.2caf2cb4.css",
-    "main.js": "/cars-from-usa/static/js/main.281c9a23.js",
+    "main.js": "/cars-from-usa/static/js/main.7aa5d135.js",
     "static/media/grand-cherokee-trailhawk.png": "/cars-from-usa/static/media/grand-cherokee-trailhawk.1dcb4a3319caa3976155.png",
     "static/media/react.svg": "/cars-from-usa/static/media/react.5f6b35a1a429e1c088f52068d898cbc3.svg",
     "index.html": "/cars-from-usa/index.html",
     "main.2caf2cb4.css.map": "/cars-from-usa/static/css/main.2caf2cb4.css.map",
-    "main.281c9a23.js.map": "/cars-from-usa/static/js/main.281c9a23.js.map"
+    "main.7aa5d135.js.map": "/cars-from-usa/static/js/main.7aa5d135.js.map"
   },
   "entrypoints": [
     "static/css/main.2caf2cb4.css",
-    "static/js/main.281c9a23.js"
+    "static/js/main.7aa5d135.js"
   ]
 }
