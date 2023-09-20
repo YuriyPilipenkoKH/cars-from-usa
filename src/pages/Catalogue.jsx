@@ -16,7 +16,7 @@ const Catalogue = () => {
   const [visibleCars, setVisibleCars] = useState(8);
   const [searchedCars, setSearchedCars] = useState(carsList)
   const [isSeaching, setIsSeaching] = useState(false)
- 
+
   const dispatch = useDispatch();
     const reRender= useSelector(getReRender)
     const favorites= useSelector(getFavorites)
@@ -51,13 +51,14 @@ const Catalogue = () => {
       await dispatch(getAllCars()); // Wait for dispatch to finish
       setSearchedCars(filterdCars);
     };
-  
+
     fetchData();
   }, [dispatch, reRender, favorites]);
 
   const carSearch = () => {
     setSearchedCars(filterdCars)
     setIsSeaching(true)
+
    }
 
   return (
@@ -80,7 +81,7 @@ const Catalogue = () => {
           ))
       }
       </Gallery>
-      { ( !isSeaching && visibleCars < carsList.length  )  && (
+      { ( visibleCars < searchedCars.length || visibleCars < carsList.length  )  && (
         <Button 
         className='LoadMore'
         onClick={handleLoadMore}>Load More</Button>

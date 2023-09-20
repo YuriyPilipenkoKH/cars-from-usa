@@ -89,7 +89,7 @@ export const MainFooter = styled.footer`
   transition: color 1s ease-in-out, fill 1s ease-in-out;
 
   &> svg {
-    /* transition: 0.3s ease; */
+    
     transition: color 1s ease-in-out, fill 1s ease-in-out;
     fill: var(--text-color);
   }
