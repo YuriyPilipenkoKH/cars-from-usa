@@ -73,7 +73,7 @@ export const StyledLink = styled(NavLink)`
 
 export const MainFooter = styled.footer`
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   gap: 40px;
   width: 320px;

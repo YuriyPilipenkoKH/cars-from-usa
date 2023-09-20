@@ -6,6 +6,7 @@ import { Navigation } from "../Navigation/Navigation";
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { FlatButton } from "../Button/Button";
 import MobileMenu from "../MobileMenu/MobileMenu";
+import { mirrorStream } from "../../images/icons";
 
 
 
@@ -33,7 +34,7 @@ export const SharedLayout = () => {
         
         <MainFooter className="main-footer">
         2023
- 
+        {mirrorStream}
           </MainFooter>
         <MobileMenu isOpen={isOpen} onClose={toggleMenu} />
       </>
