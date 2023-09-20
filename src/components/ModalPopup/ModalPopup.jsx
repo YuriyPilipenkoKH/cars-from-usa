@@ -79,7 +79,6 @@ const shut = () => {
     }`}
 >
 
-
     <ModalContainer>
     {img && (
     <ModalImage img={img}  />

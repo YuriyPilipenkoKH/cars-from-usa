@@ -14,8 +14,6 @@ export const FilfersWrap = styled.div`
     @media screen and (min-width: 1280px) {
         gap: 18px;
     }
-
-
 `
 
 export const StyledSelect = styled.select`

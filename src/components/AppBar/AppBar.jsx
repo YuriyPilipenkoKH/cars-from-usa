@@ -7,13 +7,10 @@ import { toggleTheme } from "../../redux/themeSlice";
 
 
 
-
 export const AppBar = () => {
 
     const theme = useSelector(getTheme)
     const dispatch = useDispatch()
-
-
     const themeInvertor =(theme) => {
      return  theme === 'light' ?  'dark'  :  'light'
     }
@@ -22,16 +19,13 @@ export const AppBar = () => {
       localStorage.setItem('theme', themeInvertor(theme))
       dispatch(toggleTheme())
     }
-  
-    return (
+
+     return (
       <StyledHeader >
-
-
-        <ThemeBtn 
+       <ThemeBtn 
         className="ThemeBtn"
         onClick={themeMaker}
         type="button"
-      
         >
           {(localStorage.getItem('theme') || theme) === 'light'
           ? <MdOutlineLightMode size={30}/>

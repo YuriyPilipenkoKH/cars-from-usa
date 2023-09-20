@@ -7,11 +7,9 @@ import { useDispatch} from "react-redux";
 import { addToFavorites} from "../../redux/carsOperations";
 
 
-
 export const MainCard = ({ item }) => {
 
     const [showModal, setShowModal] = useState(false);
-    
     const {
         id,
         img,

@@ -9,7 +9,6 @@ const rotate = keyframes`
   100% {
     transform: rotate(360deg);
   }
-
 `
 
 export const StyledSpinner = styled(Spinner)`

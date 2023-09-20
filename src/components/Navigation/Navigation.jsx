@@ -5,14 +5,6 @@ import { StyledWrap } from "./Navigation.styled";
 
 export const Navigation = () => {
 
-    // const [lang, setLang] = useState(langUA)
-    // const language = useSelector(getLang)
-   
-    // Language
-    // useEffect(() => {
-    //   setLang(language === 'english' ?  langEN :  langUA);
-    // }, [language])
-
     return (
       <StyledWrap >
         <StyledLink  to="/">

@@ -12,9 +12,6 @@ export const MainContainer = styled.div`
     min-height: 100vh;
     transition: all 1s ease-in-out;
 
-    /* @media screen and (min-width: 320px) {
-        width: 320px;
-    } */
 
     @media screen and (min-width: 768px) {
        width: 768px;

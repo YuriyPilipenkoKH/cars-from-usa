@@ -87,8 +87,6 @@ export const ModalImage = styled.div.attrs(props => ({
     like: props.like,
   }))`
 grid-area: c1;
-/* max-width: 100%;
-height: auto; */
 width:240px;
 height: 240px;
 border-radius: 14px;

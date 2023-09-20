@@ -62,7 +62,6 @@ export const MenuWrapp = styled.div`
 export const MenuContent = styled.div`
     display: grid;
     place-items: center;
-    /* grid-template-rows: 100px 200px ; */
     padding: 40px;
     gap: 40px;
 

@@ -12,7 +12,6 @@ import Favorites from '../pages/Favorites';
 
 const App = () => {
 
-//   const {  isLoading } = useAuth();
   const theme = useSelector(getTheme)
   const loading = useSelector(getLoading)
    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || theme);

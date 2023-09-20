@@ -18,8 +18,6 @@ export const StyledHeader = styled.div`
 `
 
 export const ThemeBtn = styled.button`
-   /* margin-left: auto; */
- 
     width: 50px;
     height: 50px;
     display: flex;
@@ -40,14 +38,12 @@ export const ThemeBtn = styled.button`
     &:hover{
         background-color: #eee5;
 
-
         &> svg {
             transition:  fill 1s ease-in-out;
             fill:  ${props => props.theme === 'light' ? '#eee' : '#222'};
         }
     }
 `
-
 export const LangBtn = styled.button`
     margin-left: auto;
     width: 50px;   
@@ -64,7 +60,6 @@ export const LangBtn = styled.button`
     color: var(--text-color) ;
     font-weight: 600;
     
-
     &> svg {
         transition:  fill 1s ease-in-out;
         fill: var(--text-color);
@@ -72,8 +67,6 @@ export const LangBtn = styled.button`
 
     &:hover{
         background-color: #eee5;
-
-
         &> svg {
             transition:  fill 1s ease-in-out;
             fill:  ${props => props.theme === 'light' ? '#eee' : '#222'};
