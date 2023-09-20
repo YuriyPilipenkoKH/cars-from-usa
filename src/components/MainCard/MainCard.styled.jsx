@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const CardWrapper = styled.div`
     display: flex ;
     flex-direction: column;
@@ -8,16 +7,8 @@ export const CardWrapper = styled.div`
     transition: all 1s ease-in-out;
     width: 274px;
     height: 426px;
-    /* background-color: var(--white); */
     border-radius: 14px;
 
-    @media screen and (min-width: 768px) {
-    
-    }
-
-    @media screen and (min-width: 1280px) {
-        
-    }
     &>button.learnBtn{
       margin-top: auto;
     }
@@ -49,7 +40,7 @@ export const ImgWrapper = styled.div.attrs(props => ({
     background-position: center;  
 
     &>button.likeBtn {
-        transition: all 0.4s ease;
+        transition: all 0.4s ease-in-out;
         &:hover{
             &>svg{
             stroke:#22f;

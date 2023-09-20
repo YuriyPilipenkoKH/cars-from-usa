@@ -17,10 +17,10 @@ padding: 12px ;
 cursor: pointer;
 outline: none;
 
-transition: all 0.4s ease; 
+transition: all 0.4sease-in-out; 
 
 &:hover, &:focus {
-  transition: all 0.4s ease; 
+  transition: all 0.4s ease-in-out; 
   background: var(--hover-blue);
  }
 `
@@ -30,7 +30,7 @@ export const StyledFlatButton = styled.button`
        border:none;
        background-color: transparent;
        cursor: pointer; 
-      transition: all 0.4s ease; 
+      transition: all 0.4s ease-in-out; 
 
 `
 

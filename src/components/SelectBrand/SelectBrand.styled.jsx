@@ -20,7 +20,7 @@ export const SelectWrapper = styled.div`
     gap: 8px;
     &>p {
         color: var(--text-color);
-        transition: all 1s ease;
+        transition: all 1s ease-in-out;
 
     }
 
@@ -77,7 +77,7 @@ export const OptionsList = styled.div.attrs(props => ({
     &> li{
         text-transform: capitalize;
         cursor: pointer;
-        transition: all 0.4s ease;
+        transition: all 0.4s ease-in-out;
         &:hover, &:focus {
             color: var(--black);
             font-weight: 600;

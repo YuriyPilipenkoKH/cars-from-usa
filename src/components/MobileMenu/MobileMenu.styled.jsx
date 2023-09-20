@@ -29,7 +29,6 @@ export const MenuWrapp = styled.div`
     theme: props.theme,
   }))`
     position: relative;
-    
     width: 100%;
     padding: 0 20px;
     display: flex;
@@ -49,8 +48,6 @@ export const MenuWrapp = styled.div`
 
     &:hover{
         background-color: #eee5;
-
-
         &> svg {
             transition: all 1s ease-in-out;
             fill:  ${props => props.theme === 'light' ? '#eee' : '#222'};

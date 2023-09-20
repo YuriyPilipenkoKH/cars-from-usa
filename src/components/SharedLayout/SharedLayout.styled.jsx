@@ -39,8 +39,6 @@ export const MainHeader= styled.header.attrs(props => ({
 
     &:hover{
         background-color: #eee5;
-
-
         &> svg {
             transition:  all 1s ease-in-out;
             fill:  ${props => props.theme === 'light' ? '#eee' : '#222'};
@@ -64,7 +62,7 @@ export const StyledLink = styled(NavLink)`
   color: var(--text-color) ;
   transition: all 1s ease-in-out;
   font-weight: 600;
-  transition: 0.3s ease;
+  transition: 0.3s ease-in-out;
 
   &.active {
     color: var(--white);
