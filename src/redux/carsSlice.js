@@ -20,6 +20,7 @@ export const carsSlice = createSlice({
             getAllCars.pending,( state) => {
               state.error = null;
               state.loading = true;
+              
           })
         .addCase(
             getAllCars.fulfilled,

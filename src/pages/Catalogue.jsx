@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { MainCard } from '../components/MainCard/MainCard'
 import FiltersBar from '../components/FiltersBar/FiltersBar'
 import { useDispatch, useSelector } from 'react-redux';
-import { getCarList, getFilter, getReRender } from '../redux/selectors';
+import { getCarList, getFavorites, getFilter, getReRender } from '../redux/selectors';
 import { getAllCars } from '../redux/carsOperations';
 import { CatalogueWrapper, Gallery } from './Page.styled';
 import { Button} from '../components/Button/Button';
@@ -19,6 +19,7 @@ const Catalogue = () => {
  
   const dispatch = useDispatch();
     const reRender= useSelector(getReRender)
+    const favorites= useSelector(getFavorites)
     const loadMoreStep = 8; 
     const {
       filterBrand, 
@@ -31,11 +32,14 @@ const Catalogue = () => {
       setVisibleCars((prevVisibleCars) => prevVisibleCars + loadMoreStep);
     };
   
-    const filterdCars = [...carsList
-      .filter(item => ( filterBrand === "" ? true : item.make.toLowerCase() === filterBrand.toLowerCase() ))
-      .filter(item => ( filterPrice === 0  ? true : Number(item.rentalPrice.replace(/\$/g, "")) <= filterPrice ))
-      .filter(item => (filterFrom === "" || filterTo === "" ? true : item.mileage >= filterFrom*1000  && item.mileage <= filterTo*1000 ))
-    ]
+    const filterdCars = () =>  {
+
+    return  [...carsList
+        .filter(item => ( filterBrand === "" ? true : item.make.toLowerCase() === filterBrand.toLowerCase() ))
+        .filter(item => ( filterPrice === 0  ? true : Number(item.rentalPrice.replace(/\$/g, "")) <= filterPrice ))
+        .filter(item => (filterFrom === "" || filterTo === "" ? true : item.mileage >= filterFrom*1000  && item.mileage <= filterTo*1000 ))
+      ]
+    }
 
     const reset =() => {
       dispatch(resetFilters())
@@ -43,8 +47,13 @@ const Catalogue = () => {
      }
 
   useEffect(() => {
-    dispatch(getAllCars());
-  }, [dispatch, reRender]);
+    const fetchData = async () => {
+      await dispatch(getAllCars()); // Wait for dispatch to finish
+      setSearchedCars(filterdCars);
+    };
+  
+    fetchData();
+  }, [dispatch, reRender, favorites]);
 
   const carSearch = () => {
     setSearchedCars(filterdCars)
