@@ -19,18 +19,21 @@ export const carsSlice = createSlice({
           .addCase(
             getAllCars.pending,( state) => {
               state.error = null;
+              state.loading = true;
           })
         .addCase(
             getAllCars.fulfilled,
               (state, { payload }) => {
                   state.carsList = payload
                   state.favorites = payload.filter((item) => item.favorite === true).length 
+                  state.loading = false;
               }
           )
         .addCase(
             getAllCars.rejected,
               (state, { payload }) => {
                   state.error = payload;
+                  state.loading = false;
               }
           )
 
@@ -38,11 +41,13 @@ export const carsSlice = createSlice({
             addToFavorites.pending, (state) => {
             state.error = null;
             state.reRender = true;
+            state.loading = true;
         })
         .addCase(
           addToFavorites.fulfilled,
-            (state, { payload }) => {
+            (state) => {
                 state.reRender = false;
+                state.loading = false;
                
             }
         )
@@ -51,6 +56,7 @@ export const carsSlice = createSlice({
             (state, { payload }) => {
                 state.error = payload;
                 state.reRender = false;
+                state.loading = false;
             }
         )
           
