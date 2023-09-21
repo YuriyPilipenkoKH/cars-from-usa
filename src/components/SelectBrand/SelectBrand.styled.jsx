@@ -61,7 +61,7 @@ export const OptionsList = styled.div.attrs(props => ({
   }))`
    
     
-    width: ${props => (props.price ? '116px' : "216px")} ;
+    width: ${props => (props.price ? '116px' : "215px")} ;
     height: ${props => (props.price ? '168px' : "272px")} ;
     border-radius: 14px;
     padding: 14px;
