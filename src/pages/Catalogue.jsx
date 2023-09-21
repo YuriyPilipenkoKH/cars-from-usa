@@ -9,6 +9,7 @@ import { CatalogueWrapper, Gallery } from './Page.styled';
 import { Button} from '../components/Button/Button';
 
 import { resetFilters } from '../redux/filterSlice';
+import { iconLoader } from '../images/icons';
 
 
 const Catalogue = () => {
@@ -81,10 +82,10 @@ const Catalogue = () => {
           ))
       }
       </Gallery>
-      { ( visibleCars < searchedCars.length || visibleCars < carsList.length  )  && (
+      { searchedCars.length !== 0 && ( visibleCars < searchedCars.length || visibleCars < carsList.length  )  && (
         <Button 
         className='LoadMore'
-        onClick={handleLoadMore}>Load More</Button>
+        onClick={handleLoadMore}>Load More {iconLoader} </Button>
       )}
 
 

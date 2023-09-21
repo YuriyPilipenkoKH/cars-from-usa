@@ -35,6 +35,10 @@ display: grid;
     background-color: transparent;
     font-weight: 600;
     margin-top: 50px;
+
+    &>svg {
+      fill:  var(--blue);
+    }
   }
 
 `
