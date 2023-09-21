@@ -67,11 +67,12 @@ export const FilterButtonWrapp = styled.div`
         right: 32px;
          }    
          @media screen and (min-width: 1280px) {
-            right: 60px;
+            top: 40px;
+            right: -60px;
          }
 
          &:hover{
-              transition: all 0.5s ease-in-out;
+              transition: all 1s ease-in-out;
               &>svg{
             fill: var(--yellow);
         }
