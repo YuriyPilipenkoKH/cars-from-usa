@@ -82,7 +82,7 @@ const Catalogue = () => {
           ))
       }
       </Gallery>
-      { searchedCars.length !== 0 && ( visibleCars < searchedCars.length || visibleCars < carsList.length  )  && (
+      {  ( visibleCars < searchedCars.length && visibleCars < carsList.length  )  && (
         <Button 
         className='LoadMore'
         onClick={handleLoadMore}>Load More {iconLoader} </Button>
