@@ -17,6 +17,7 @@ const Catalogue = () => {
   const [visibleCars, setVisibleCars] = useState(8);
   const [searchedCars, setSearchedCars] = useState(carsList)
   const [isSeaching, setIsSeaching] = useState(false)
+  const list = isSeaching  ? searchedCars : carsList 
 
   const dispatch = useDispatch();
     const reRender= useSelector(getReRender)
@@ -28,6 +29,8 @@ const Catalogue = () => {
       filterFrom,
       filterTo
     } = useSelector(getFilter)
+
+
 
     const handleLoadMore = () => {
       setVisibleCars((prevVisibleCars) => prevVisibleCars + loadMoreStep);
@@ -69,25 +72,17 @@ const Catalogue = () => {
     reset={reset}
     search={carSearch} />
     <Gallery className='gallery'>
-        {isSeaching 
-        ? (searchedCars
+        {list
         .slice(0, visibleCars)
-        .map((item, index) =>
-         <MainCard key={index} item={item} />
-        ))
-        : (carsList
-          .slice(0, visibleCars)
-          .map((item, index) =>
-           <MainCard key={index} item={item} />
-          ))
-      }
-      </Gallery>
+        .map((item, index) => (
+          <MainCard key={index} item={item} />
+        ))}
+    </Gallery>
       {  ( visibleCars < searchedCars.length && visibleCars < carsList.length  )  && (
         <Button 
         className='LoadMore'
         onClick={handleLoadMore}>Load More {iconLoader} </Button>
       )}
-
 
      </CatalogueWrapper>
   )
