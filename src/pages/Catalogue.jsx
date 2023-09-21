@@ -48,12 +48,15 @@ const Catalogue = () => {
     const reset =() => {
       dispatch(resetFilters())
       setIsSeaching(false)
+      setVisibleCars(8)
+      setSearchedCars(carsList)
      }
 
   useEffect(() => {
     const fetchData = async () => {
       await dispatch(getAllCars()); // Wait for dispatch to finish
       setSearchedCars(filterdCars);
+
     };
 
     fetchData();
@@ -62,6 +65,7 @@ const Catalogue = () => {
   const carSearch = () => {
     setSearchedCars(filterdCars)
     setIsSeaching(true)
+    setVisibleCars(8)
 
    }
 
@@ -77,7 +81,9 @@ const Catalogue = () => {
         .map((item, index) => (
           <MainCard key={index} item={item} />
         ))}
+
     </Gallery>
+        { searchedCars.length ===  0 && <h2 >Nothing Was Found</h2>}
       {  ( visibleCars < searchedCars.length && visibleCars < carsList.length  )  && (
         <Button 
         className='LoadMore'

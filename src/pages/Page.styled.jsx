@@ -41,6 +41,17 @@ display: grid;
     }
   }
 
+  &>h2{
+    font-size: 32px;  
+    font-weight: 600;
+    justify-self: center;
+    color: var(--text-color);
+    transition: all 1s ease-in-out;
+    @media screen and (min-width: 768px) {
+  font-size: 46px;
+    }
+  }
+
 `
 
 export const HomeTitle = styled.h1`
@@ -85,6 +96,8 @@ export const Gallery = styled.div`
   display: grid;
   place-items: center;
   gap: 30px;
+
+
   
 
   @media screen and (min-width: 768px) {
