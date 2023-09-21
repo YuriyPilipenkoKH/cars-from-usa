@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import {BiChevronDown, BiChevronUp} from 'react-icons/bi'
-import { Control, OptionsList, SelectWrapper } from './SelectBrand.styled'
+import { Control, OptionWrapp, OptionsList, SelectWrapper } from './SelectBrand.styled'
 import { FlatButton } from '../Button/Button'
 import { useDispatch, useSelector } from 'react-redux'
 import { showFilterBrand } from '../../redux/filterSlice'
@@ -53,17 +53,21 @@ const SelectBrand = () => {
             {isSelected ? <BiChevronUp size ={20}/> : <BiChevronDown size ={20}/>}
             </FlatButton>
         </Control>
-       {isSelected &&  <OptionsList  className={isSelected ? 'OptionsList show' : 'OptionsList'}>
-         {carBrands.map((brand, idx) => {
-         return <li 
-         key = {idx}
-         onClick ={() => {
-           setSelectedBrand(brand)
-           setIsSelected(false)
-        }}
-         >{brand}</li>
-       }) }
-        </OptionsList>}
+       {isSelected &&  
+       <OptionWrapp>
+         <OptionsList  className={isSelected ? 'OptionsList show' : 'OptionsList'}>
+           {carBrands.map((brand, idx) => {
+           return <li
+           key = {idx}
+           onClick ={() => {
+             setSelectedBrand(brand)
+             setIsSelected(false)
+          }}
+           >{brand}</li>
+         }) }
+          </OptionsList>
+       </OptionWrapp>
+        }
     </SelectWrapper>
   )
 }

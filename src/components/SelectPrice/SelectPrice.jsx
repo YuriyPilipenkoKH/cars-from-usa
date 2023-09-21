@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Control, OptionsList, SelectWrapper } from '../SelectBrand/SelectBrand.styled'
+import { Control, OptionWrapp, OptionsList, SelectWrapper } from '../SelectBrand/SelectBrand.styled'
 import { FlatButton } from '../Button/Button'
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi'
 import { useDispatch, useSelector } from 'react-redux'
@@ -30,17 +30,21 @@ const SelectPrice = () => {
             {isSelected ? <BiChevronUp size ={20}/> : <BiChevronDown size ={20}/>}
             </FlatButton>
         </Control>
-       {isSelected &&  <OptionsList price ={prices[0]}>
-         {prices.map((price, idx) => {
-         return <li 
-         key = {idx}
-         onClick ={() => {
-          setSelectedPrice(price)
-          setIsSelected(false)
-        }}
-         >{price}</li>
-       }) }
-        </OptionsList>}
+       {isSelected &&  
+       <OptionWrapp  price ={prices[0]}>
+         <OptionsList price ={prices[0]}>
+           {prices.map((price, idx) => {
+           return <li
+           key = {idx}
+           onClick ={() => {
+            setSelectedPrice(price)
+            setIsSelected(false)
+          }}
+           >{price}</li>
+         }) }
+          </OptionsList>
+       </OptionWrapp>
+        }
     </SelectWrapper>
   )
 }
