@@ -8,9 +8,9 @@ import { getFilter } from '../../redux/selectors'
 
 
 const SelectBrand = () => {
-    const [selectedBrand, setSelectedBrand] = useState("")
+  const {filterBrand} = useSelector(getFilter)
+    const [selectedBrand, setSelectedBrand] = useState(filterBrand)
     const [isSelected, setIsSelected] = useState(false)
-    const {filterBrand} = useSelector(getFilter)
     const dispatch = useDispatch()
     const carBrands = [
         'buick',
@@ -39,18 +39,21 @@ const SelectBrand = () => {
         dispatch(showFilterBrand(selectedBrand))
     }, [dispatch, selectedBrand])
 
+    useEffect(() => {
+      setSelectedBrand(filterBrand)
+    }, [ filterBrand])
 
   return (
     <SelectWrapper>
+
         <p>Car brand</p>
         <Control> 
-       
-            { filterBrand || 'Enter the text' } 
+           { filterBrand || 'Enter the text' } 
             <FlatButton  onClick ={()=>  setIsSelected(!isSelected)}> 
             {isSelected ? <BiChevronUp size ={20}/> : <BiChevronDown size ={20}/>}
             </FlatButton>
         </Control>
-       {isSelected &&  <OptionsList>
+       {isSelected &&  <OptionsList  className={isSelected ? 'OptionsList show' : 'OptionsList'}>
          {carBrands.map((brand, idx) => {
          return <li 
          key = {idx}

@@ -7,14 +7,19 @@ import { showFilterPrice } from '../../redux/filterSlice'
 import { getFilter } from '../../redux/selectors'
 
 const SelectPrice = () => {
-    const [selectedPrice, setSelectedPrice] = useState(0)
+  const {filterPrice} = useSelector(getFilter)
+    const [selectedPrice, setSelectedPrice] = useState(filterPrice)
     const [isSelected, setIsSelected] = useState(false)
     const prices = [30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150 ]
     const dispatch = useDispatch()
-    const {filterPrice} = useSelector(getFilter)
+
     useEffect(() => {
       dispatch(showFilterPrice(selectedPrice))
   }, [dispatch, selectedPrice])
+
+  useEffect(() => {
+    setSelectedPrice(filterPrice)
+  }, [ filterPrice])
 
   return (
     <SelectWrapper>

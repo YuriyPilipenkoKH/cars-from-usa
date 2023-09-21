@@ -56,6 +56,7 @@ export const OptionsList = styled.div.attrs(props => ({
     gap: 15px;
     overflow-y: auto;
     z-index: 5;
+  
 
     &::-webkit-scrollbar {
     width: 12px;
