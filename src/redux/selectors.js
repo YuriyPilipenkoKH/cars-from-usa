@@ -14,9 +14,3 @@ export const getLoading = state => state.cars.loading;
 
 
 
-      //   : (carsList
-      //     .slice(0, visibleCars)
-      //     .map((item, index) =>
-      //      <MainCard key={index} item={item} />
-      //     ))
-      // }
