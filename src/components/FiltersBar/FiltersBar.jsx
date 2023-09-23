@@ -10,7 +10,7 @@ import { iconReset } from "../../images/icons"
 
 
 
-const FiltersBar = ({search, reset}) => {
+const FiltersBar = ({search, reset, searching}) => {
   const {
     filterBrand, 
     filterPrice,
@@ -20,8 +20,8 @@ const FiltersBar = ({search, reset}) => {
 
   return (
     <FilfersWrap>
-        <SelectBrand/>
-        <SelectPrice/>
+        <SelectBrand searching={searching} reset={reset}/>
+        <SelectPrice searching={searching} reset={reset}/>
         <SelectMileage/>    
         <FilterButtonWrapp>
           {  (filterBrand || filterPrice >0 || filterFrom || filterTo ) &&    (

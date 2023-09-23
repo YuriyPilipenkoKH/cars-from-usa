@@ -74,7 +74,8 @@ const Catalogue = () => {
 
     <FiltersBar 
     reset={reset}
-    search={carSearch} />
+    search={carSearch} 
+    searching={isSeaching}/>
     <Gallery className='gallery'>
         {list
         .slice(0, visibleCars)

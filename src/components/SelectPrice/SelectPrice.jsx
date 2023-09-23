@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { showFilterPrice } from '../../redux/filterSlice'
 import { getFilter } from '../../redux/selectors'
 
-const SelectPrice = () => {
+const SelectPrice = ({searching, reset}) => {
   const {filterPrice} = useSelector(getFilter)
     const [selectedPrice, setSelectedPrice] = useState(filterPrice)
     const [isSelected, setIsSelected] = useState(false)
@@ -19,11 +19,14 @@ const SelectPrice = () => {
 
   useEffect(() => {
     setSelectedPrice(filterPrice)
-  }, [ filterPrice])
+    if(filterPrice === 0){
+      setIsSelected(false)
+    }
+  }, [ searching, reset, filterPrice])
 
   return (
     <SelectWrapper>
-         <p>Price/ 1 hour</p>
+         <p >Price/ 1 hour</p>
         <Control price ={prices[0]}>
             {filterPrice || 'To $'}
             <FlatButton  onClick ={()=>  setIsSelected(!isSelected)}> 

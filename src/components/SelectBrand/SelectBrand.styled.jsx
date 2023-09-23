@@ -52,7 +52,8 @@ export const OptionWrapp = styled.div.attrs(props => ({
     border-radius: 14px;
     padding: 14px;
     background-color: var(--white);
-    z-index: 4;
+    z-index: ${props => (props.price ? 3 : 4)} ;
+
 `
 
 export const OptionsList = styled.div.attrs(props => ({
@@ -73,7 +74,7 @@ export const OptionsList = styled.div.attrs(props => ({
     display: grid;
     gap: 15px;
     overflow-y: auto;
-    z-index: 5;
+    z-index: ${props => (props.price ? 5 : 6)} ;
   
 
     &::-webkit-scrollbar {
