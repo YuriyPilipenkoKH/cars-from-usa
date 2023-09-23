@@ -38,7 +38,8 @@ export const ImgWrapper = styled.div.withConfig({
     display: flex;
     align-items: start;
     justify-content: flex-end;
-    background-image: url(${({ img }) => img});
+    background-image: ${({ img }) => img && `url("${img}")`};
+ 
     background-size: cover;
     background-position: center;  
 
