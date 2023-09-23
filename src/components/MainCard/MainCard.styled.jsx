@@ -1,3 +1,4 @@
+import isPropValid from "@emotion/is-prop-valid";
 import styled from "styled-components";
 
 export const CardWrapper = styled.div`
@@ -23,10 +24,12 @@ export const CardWrapper = styled.div`
 
 `
 
-export const ImgWrapper = styled.div.attrs(props => ({
-    img: props.img,
-    like: props.like,
-  }))`
+export const ImgWrapper = styled.div.withConfig({
+    shouldForwardProp: prop =>
+        isPropValid(prop) &&
+        prop !== 'img' &&
+        prop !== 'like'
+  })`
     width: 274px;
     height: 268px;
     border-radius: 14px;
@@ -35,7 +38,7 @@ export const ImgWrapper = styled.div.attrs(props => ({
     display: flex;
     align-items: start;
     justify-content: flex-end;
-    background-image: url(${props => props.img &&  props.img});
+    background-image: url(${({ img }) => img});
     background-size: cover;
     background-position: center;  
 
@@ -47,9 +50,8 @@ export const ImgWrapper = styled.div.attrs(props => ({
             }
         }
         &>svg {
-        fill: ${props => props.like ? "#22f" : "transparent"};
-        stroke: ${props => props.like ? "#22f" : "#ffffff"}
-
+        fill: ${({ like }) => like ?  "#22f" : "transparent"};    
+        stroke: ${({ like }) => like ?  "#22f" :  "#ffffff"};    
        }
     }
 

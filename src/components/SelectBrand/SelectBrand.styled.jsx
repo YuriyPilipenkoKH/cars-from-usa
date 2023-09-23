@@ -1,3 +1,4 @@
+import isPropValid from "@emotion/is-prop-valid";
 import styled, { css } from "styled-components";
 
 export const StyledControl = css`
@@ -25,12 +26,13 @@ export const SelectWrapper = styled.div`
     }
 
 `
-export const Control = styled.div.attrs(props => ({
-    // Add any other props you want to pass here
-    price: props.price,
-  }))`
+export const Control = styled.div.withConfig({
+    shouldForwardProp: prop =>
+        isPropValid(prop) &&
+        prop !== 'price'
+  })`
     ${StyledControl}
-    width: ${props => (props.price ? '125px' : "224px")} ;
+    width:  ${({ price }) => price ?  '125px' : "224px"};
     height: 48px;
 
     text-transform: capitalize;
@@ -41,29 +43,32 @@ export const Control = styled.div.attrs(props => ({
 
 
 `
-export const OptionWrapp = styled.div.attrs(props => ({
-    // Add any other props you want to pass here
-    price: props.price,
-  }))`
-    width: ${props => (props.price ? '125px' : "224px")} ;
-    height: ${props => (props.price ? '168px' : "272px")} ;
+export const OptionWrapp = styled.div.withConfig({
+    shouldForwardProp: prop =>
+        isPropValid(prop) &&
+        prop !== 'price'
+  })`
+
+    width:  ${({ price }) => price ?  '125px' : "224px"};
+    height: ${({ price }) => price ?  '168px' : "272px"};
     position: absolute;
     top: 85px;
     border-radius: 14px;
     padding: 14px;
     background-color: var(--white);
-    z-index: ${props => (props.price ? 3 : 4)} ;
+    z-index:  ${({ price }) => price ?  3 : 4};
 
 `
 
-export const OptionsList = styled.div.attrs(props => ({
-    // Add any other props you want to pass here
-    price: props.price,
-  }))`
+export const OptionsList = styled.div.withConfig({
+    shouldForwardProp: prop =>
+        isPropValid(prop) &&
+        prop !== 'price'
+  })`
    
     
-    width: ${props => (props.price ? '116px' : "215px")} ;
-    height: ${props => (props.price ? '168px' : "272px")} ;
+    width:  ${({ price }) => price ?  '116px' : "215px"};
+    height: ${({ price }) => price ?  '168px' : "272px"};
     border-radius: 14px;
     padding: 14px;
     background-color: var(--white);
@@ -74,7 +79,7 @@ export const OptionsList = styled.div.attrs(props => ({
     display: grid;
     gap: 15px;
     overflow-y: auto;
-    z-index: ${props => (props.price ? 5 : 6)} ;
+    z-index:  ${({ price }) => price ?  5 : 6};
   
 
     &::-webkit-scrollbar {

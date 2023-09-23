@@ -48,7 +48,7 @@ export const FilterButtonWrapp = styled.div`
     position: relative;
     
     &>button.searchBtn{
-        width:138px;
+        width: 158px;
     @media screen and (min-width: 768px) {
         width: 80px;
         align-self: flex-end;
@@ -72,7 +72,7 @@ export const FilterButtonWrapp = styled.div`
          }
 
          &:hover{
-              transition: all 1s ease-in-out;
+              transition: all 0.5s ease-in-out;
               &>svg{
             fill: var(--yellow);
         }

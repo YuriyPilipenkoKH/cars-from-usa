@@ -7,7 +7,7 @@ import { showFilterBrand } from '../../redux/filterSlice'
 import { getFilter } from '../../redux/selectors'
 
 const SelectBrand = ({searching, reset}) => {
-  console.log('searching',searching)
+
   const {filterBrand} = useSelector(getFilter)
     const [selectedBrand, setSelectedBrand] = useState(filterBrand)
     const [isSelected, setIsSelected] = useState(false)

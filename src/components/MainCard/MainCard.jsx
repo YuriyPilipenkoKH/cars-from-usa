@@ -31,12 +31,13 @@ export const MainCard = ({ item }) => {
     };
 
     const updatedCar = { ...item, favorite: !item.favorite }
+    let like = item.favorite ? item.favorite.toString() : false
 
     return (
         <CardWrapper>
             <ImgWrapper 
             img={img}
-            like={!!item.favorite}> 
+            like={like}> 
             {/* If you want to write it to the DOM, pass a string instead: like="true" or like={value.toString()}. */}
             <FlatButton 
             onClick={()=> dispatch(addToFavorites({id, updatedCar}))}

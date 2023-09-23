@@ -33,7 +33,9 @@ const FiltersBar = ({search, reset, searching}) => {
            )}
           <Button
             onClick={search}
-           className = 'searchBtn'>Search</Button>
+           className = 'searchBtn'>
+           Search
+            </Button>
         </FilterButtonWrapp>
 
     </FilfersWrap>

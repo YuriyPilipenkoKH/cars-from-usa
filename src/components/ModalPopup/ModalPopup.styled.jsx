@@ -31,7 +31,6 @@ export const ModalContainer = styled.div`
 
     position: relative;
     display: grid;
-    /* place-items: center; */
     grid-template-rows: 248px  126px 68px 100px auto;
     grid-template-areas: 
     'c1'
