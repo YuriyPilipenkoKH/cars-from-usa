@@ -92,7 +92,7 @@ export const Page404 = styled.div`
   }
 
 `
-export const Gallery = styled.div`
+export const Gallery = styled.ul`
   display: grid;
   place-items: center;
   gap: 30px;

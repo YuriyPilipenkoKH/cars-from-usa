@@ -1,7 +1,7 @@
 import isPropValid from "@emotion/is-prop-valid";
 import styled from "styled-components";
 
-export const CardWrapper = styled.div`
+export const CardWrapper = styled.li`
     display: flex ;
     flex-direction: column;
     gap: 8px;
