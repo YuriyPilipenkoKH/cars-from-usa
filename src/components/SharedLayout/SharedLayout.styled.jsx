@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 import { NavLink } from "react-router-dom";
+import isPropValid from '@emotion/is-prop-valid';
 
 
-export const MainHeader= styled.header.attrs(props => ({
-  theme: props.theme,
-}))`
+export const MainHeader= styled.header.withConfig({
+  shouldForwardProp: prop =>
+      isPropValid(prop) &&
+      prop !== 'theme'
+})`
   top: 0;
   left: 0;
   width: 320px;
@@ -41,7 +44,7 @@ export const MainHeader= styled.header.attrs(props => ({
         background-color: #eee5;
         &> svg {
             transition:  all 1s ease-in-out;
-            fill:  ${props => props.theme === 'light' ? '#eee' : '#222'};
+            fill:  ${({ theme }) => theme === 'light' ? "var(--white)" : "var(--black)"};
         }
     }
     }

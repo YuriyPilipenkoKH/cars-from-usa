@@ -24,7 +24,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
       }
   return (
     <MenuWrapp className={isOpen ? ['menu', 'active'].join(' ') : 'menu'}>
-        <MenuHeader>
+        <MenuHeader theme={theme}>
         <ThemeBtn 
         onClick={themeMaker}
         type="button"

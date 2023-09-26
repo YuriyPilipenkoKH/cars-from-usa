@@ -1,3 +1,4 @@
+import isPropValid from '@emotion/is-prop-valid';
 import styled from 'styled-components';
 
 export const MenuWrapp = styled.div`
@@ -25,9 +26,11 @@ export const MenuWrapp = styled.div`
   }
 
 `
-  export const MenuHeader = styled.div.attrs(props => ({
-    theme: props.theme,
-  }))`
+  export const MenuHeader = styled.div.withConfig({
+    shouldForwardProp: prop =>
+        isPropValid(prop) &&
+        prop !== 'theme'
+  })`
     position: relative;
     width: 100%;
     padding: 0 20px;
@@ -50,7 +53,7 @@ export const MenuWrapp = styled.div`
         background-color: #eee5;
         &> svg {
             transition: all 1s ease-in-out;
-            fill:  ${props => props.theme === 'light' ? '#eee' : '#222'};
+            fill:  ${({ theme }) => theme === 'light' ? "var(--yellow)" : "var(--black)"};
         }
     }
     }

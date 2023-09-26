@@ -1,4 +1,4 @@
-
+import isPropValid from "@emotion/is-prop-valid";
 import styled from "styled-components";
 
 export const CardWrapper = styled.div`
@@ -24,23 +24,26 @@ export const CardWrapper = styled.div`
 
 `
 
-export const ImgWrapper = styled.div.attrs(props => ({
-    img: props.img,
-    like: props.like,
-  }))`
+export const ImgWrapper = styled.div.withConfig({
+    shouldForwardProp: prop =>
+        isPropValid(prop) &&
+        prop !== 'like'
+  })`
+  position: relative;
     width: 274px;
     height: 268px;
     border-radius: 14px;
     background-color: #7775;
-    padding: 14px;
     display: flex;
     align-items: start;
     justify-content: flex-end;
-    background-image: url(${props => props.img &&  props.img});
-     background-size: cover;
-    background-position: center;  
+
 
     &>button.likeBtn {
+        z-index: 2;
+        position: absolute;
+        top: 14px;
+        right: 14px;
         transition: all 0.4s ease-in-out;
         &:hover{
             &>svg{
@@ -48,12 +51,22 @@ export const ImgWrapper = styled.div.attrs(props => ({
             }
         }
         &>svg {
-        fill: ${props => props.like ? "var(--blue)" : "transparent"};
-        stroke: ${props => props.like ? "var(--blue)" : "#ffffff"}   
+        fill:  ${({ like }) => like ?  "var(--blue)" : "transparent"};
+        stroke: ${({ like }) => like ?  "var(--blue)" : "#ffffff"};  
        }
     }
 
 `
+
+export const CardImage = styled.img`
+    /* object-fit: fill; */
+    object-fit: cover;
+
+    border-radius: 14px;
+    width: 274px;
+    height: 268px;
+`
+
 export const CardTitle = styled.div`
     display: flex;
     justify-content: space-between;
@@ -61,6 +74,10 @@ export const CardTitle = styled.div`
     font-weight: 600;
     color: var(--text-color);
     transition: all 1s ease-in-out;
+
+     &>p>span.model{
+        color :#3470FF;
+    }
 `
 export const RowWrapper = styled.div`
     display: flex;

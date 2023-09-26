@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, FlatButton } from "../Button/Button"
-import { CardTitle, CardWrapper, ImgWrapper, RowWrapper } from "./MainCard.styled"
+import { CardImage, CardTitle, CardWrapper, ImgWrapper, RowWrapper } from "./MainCard.styled"
 import ModalPopup from "../ModalPopup/ModalPopup";
 import { iconHeart } from "../../images/icons";
 import { useDispatch} from "react-redux";
@@ -14,6 +14,7 @@ export const MainCard = ({ item }) => {
         id,
         img,
         make, 
+        model,
         year,
         type, 
         rentalPrice, 
@@ -34,11 +35,13 @@ export const MainCard = ({ item }) => {
     let like = item.favorite ? item.favorite.toString() : false
 
     return (
-        <CardWrapper>
+        <CardWrapper className="MainCard">
             <ImgWrapper 
-            img={img}
             like={like}> 
             {/* If you want to write it to the DOM, pass a string instead: like="true" or like={value.toString()}. */}
+            <CardImage 
+            src={img}
+            alt='car-picture'/>
             <FlatButton 
             onClick={()=> dispatch(addToFavorites({id, updatedCar}))}
 
@@ -47,7 +50,11 @@ export const MainCard = ({ item }) => {
             </FlatButton>
             </ImgWrapper>
             <CardTitle>
-                <p>{make}, <span> {year} </span></p>
+                <p>{make}
+                <span className="model"> {model} 
+                </span>,<span>
+                {year} </span>
+                 </p>
                 <p> {rentalPrice} </p>
             </CardTitle>
 

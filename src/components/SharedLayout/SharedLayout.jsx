@@ -7,17 +7,22 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { FlatButton } from "../Button/Button";
 import MobileMenu from "../MobileMenu/MobileMenu";
 import { mirrorStream } from "../../images/icons";
+import { getTheme } from "../../redux/selectors";
+import { useSelector } from "react-redux";
 
 
 
 export const SharedLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const theme = useSelector(getTheme)
   const toggleMenu = () => {
     setIsOpen(!isOpen);
 };
     return (
       <>
-        <MainHeader  className="main-header" >
+        <MainHeader 
+        className="main-header"
+        theme={theme} >
 
         <Navigation/>
         <AppBar/>

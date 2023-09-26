@@ -25,6 +25,7 @@ export const AppBar = () => {
        <ThemeBtn 
         className="ThemeBtn"
         onClick={themeMaker}
+        theme={theme}
         type="button"
         >
           {(localStorage.getItem('theme') || theme) === 'light'

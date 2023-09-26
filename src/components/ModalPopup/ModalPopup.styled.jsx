@@ -1,3 +1,4 @@
+
 import styled from "styled-components";
 
 
@@ -81,24 +82,17 @@ export const RentalCarWrapp = styled.div`
     }
   `
 
-export const ModalImage = styled.div.attrs(props => ({
-    img: props.img,
-    like: props.like,
-  }))`
+export const ModalImage = styled.img`
 grid-area: c1;
 width:240px;
 height: 240px;
 border-radius: 14px;
-    background-image: url(${props => props.img &&  props.img});
-    background-size: cover;
-    background-position: center;  
+object-fit: cover;
 
 @media screen and (min-width: 768px) {
   width: 461px;
   height: 248px;
-
 }
-
 `;
 
 export const CarDescription = styled.div`
@@ -113,6 +107,9 @@ export const CarDescription = styled.div`
         gap: 8px;
         &>span{
            color :#3470FF;
+         &>span.comma{
+           color :var(--black);
+        }
         }
     }
 

@@ -81,13 +81,13 @@ const shut = () => {
 
     <ModalContainer>
     {img && (
-    <ModalImage img={img}  />
+    <ModalImage src={img} alt="ModalImage"  />
     )}
 
     <CarDescription>
       <div className="car-model">
         <p> {make} </p>
-        <span> {model} </span>
+        <span> {model}<span className="comma">,</span> </span>
         <p> {year} </p>
       </div>
 

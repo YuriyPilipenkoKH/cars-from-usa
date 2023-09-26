@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Montserrat:wght@400;600&display=swap');
 
-@import '../../node_modules/modern-normalize/modern-normalize.css';
+/* @import '../../node_modules/modern-normalize/modern-normalize.css'; */
 
 
 :root {
@@ -26,7 +26,6 @@
   --grey: #8A8A89;
   
   
-
 }
 
 :root[data-theme="light"] {
@@ -66,8 +65,6 @@
   --button-color-option: #003366;
   
   --main-text:  #001129;
-
-
 }
 
 body {

@@ -17,7 +17,7 @@ padding: 12px ;
 cursor: pointer;
 outline: none;
 
-transition: all 0.4sease-in-out; 
+transition: all 0.4s ease-in-out; 
 
 &:hover, &:focus {
   transition: all 0.4s ease-in-out; 
