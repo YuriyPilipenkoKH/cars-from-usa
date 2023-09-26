@@ -37,7 +37,7 @@ const Favorites = () => {
          <MainCard key={index} item={item} /> 
         )}
       </Gallery>
-
+      { favorites ===  0 && <h2 >No cars added yet</h2>}
 
    { (favorites > visibleCars) && (
         <Button 

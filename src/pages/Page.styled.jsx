@@ -45,6 +45,7 @@ display: grid;
     font-size: 32px;  
     font-weight: 600;
     justify-self: center;
+    align-self: center;
     color: var(--text-color);
     transition: all 1s ease-in-out;
     @media screen and (min-width: 768px) {
