@@ -97,10 +97,7 @@ export const Gallery = styled.ul`
   display: grid;
   place-items: center;
   gap: 30px;
-
-
   
-
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
 }

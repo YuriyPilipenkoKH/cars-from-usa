@@ -14,7 +14,8 @@ export const MenuWrapp = styled.div`
   height: 100vh;
   z-index: 5;
   background-color: var(--background-color);
-  transition: left 1s;
+  transition: left 1s; 
+  transition:  all 1s ease-in-out;
   padding: 25px;
 
   &.active {
