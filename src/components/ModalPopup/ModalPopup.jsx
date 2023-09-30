@@ -80,9 +80,9 @@ const shut = () => {
 >
 
     <ModalContainer>
-    {img && (
-    <ModalImage src={img} alt="ModalImage"  />
-    )}
+    {/* {img && (
+      )} */}
+      <ModalImage src={img} alt="ModalImage"  />
 
     <CarDescription>
       <div className="car-model">

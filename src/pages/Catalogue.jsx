@@ -5,7 +5,7 @@ import FiltersBar from '../components/FiltersBar/FiltersBar'
 import { useDispatch, useSelector } from 'react-redux';
 import { getCarList, getFavorites, getFilter, getReRender } from '../redux/selectors';
 import { getAllCars } from '../redux/carsOperations';
-import { CatalogueWrapper, Gallery } from './Page.styled';
+import { CatalogueContainer, CatalogueWrapper, Gallery } from './Page.styled';
 import { Button} from '../components/Button/Button';
 
 import { resetFilters } from '../redux/filterSlice';

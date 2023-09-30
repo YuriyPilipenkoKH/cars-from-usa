@@ -25,9 +25,19 @@ export const HomeWrapper= styled.div`
     }
 
 `
+
+export const CatalogueContainer= styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-self: start;
+`
 export const CatalogueWrapper= styled.div`
-position: relative;
-display: grid;
+  position: relative;
+  display: grid;
+  gap: 1em;
+
   &>button.LoadMore{
     width: 160px;
     justify-self: center;
@@ -48,6 +58,7 @@ display: grid;
     align-self: center;
     color: var(--text-color);
     transition: all 1s ease-in-out;
+    
     @media screen and (min-width: 768px) {
   font-size: 46px;
     }

@@ -22,9 +22,9 @@ export const MainContainer = styled.div`
         padding: 0 1em;
     }
 
-    &>.wrapper {
+    /* &>.wrapper {
         align-self: start;
         display: grid;
         gap: 1em;
-    }
+    } */
 `;
